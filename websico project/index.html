@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soaring Eagle Routes</title>
+    <style>     
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3e5f5; /* Light purple background */
+            color: #333;
+        }
+        header {
+            background-image: url('world.webp'); /* Background image behind the title */
+            background-size: cover;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .custom-heading {
+            font-size: 3em; /* Larger than default h1 size */
+            margin: 0;
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark translucent background for the title */
+            display: inline-block;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #6a1b9a; /* Darker purple */
+            padding: 0 20px;
+        }
+        nav a {
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ab47bc; /* Lighter purple */
+        }
+        .auth-buttons {
+            display: flex;
+        }
+        .auth-buttons a {
+            margin-left: 10px;
+            background-color: #ab47bc; /* Lighter purple */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .search-bar {
+            padding: 15px;
+            background-color: #6a1b9a;
+            text-align: center;
+        }
+        .search-bar input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ab47bc;
+            font-size: 1em;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto; /* Center the slideshow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .slides {
+            display: none;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5); /* Darker arrows for better visibility */
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #6a1b9a;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #8e24aa;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        article {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            box-sizing: border-box;
+        }
+          article:hover {
+            transform: translateY(-10px); /* Bring the card up on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;}
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        article h2 {
+            margin-top: 0;
+            color: #8e24aa; /* Vibrant purple heading color */
+        }
+        article p {
+            color: #616161; /* Gray text */
+        }
+        article a {
+            color: #ff4081; /* Pink for links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        article a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #8e24aa; /* Vibrant purple */
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="custom-heading">Welcome to Soaring Eagle Routes</h1>
+        <p>Your ultimate guide to exploring the world.</p>
+    </header>
+
+    <nav>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#countries">Countries</a>
+            <a href="#adventures">Adventures</a>
+            <a href="#about">about</a>
+            <a href="#guides">Guides</a>
+            <a href="#tips">Travel Tips</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="#register">Register</a>
+            <a href="#signin">Sign In</a>
+        </div>
+    </nav>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search for destinations, travel tips, or guides...">
+    </div>
+
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="s1.webp" alt="Slide 1">
+        </div>
+        <div class="slides">
+            <img src="s2.jpg" alt="Slide 2">
+        </div>
+        <div class="slides">
+            <img src="s3.jpg" alt="Slide 3">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+    <main>
+        <article>
+            <img src="web1.webp" alt="Destination Image">
+            <h2>Exploring the Wonders of Asia</h2>
+            <p>From the bustling streets of Tokyo to the serene beaches of Thailand, Asia offers a wealth of experiences.</p>
+            <a href="#">Read More...</a>
+        </article>
+
+        <article>
+            <img src="web2.jpg" alt="Destination Image">
+            <h2>Discover the Beauty of Europe</h2>
+            <p>Explore the historical landmarks and scenic beauty of Europe, from the Eiffel Tower to the Swiss Alps.</p>
+            <a href="#">Read More...</a>
+        </article>
+
+        <article>
+            <img src="web3.webp" alt="Destination Image">
+            <h2>Adventures in South America</h2>
+            <p>Immerse yourself in the vibrant cultures and breathtaking landscapes of South America.</p>
+            <a href="#">Read More...</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Soaring Eagle Routes. All Rights Reserved.</p>
+        <p>Contact us at info@soaringeagleroutes.com | Phone: (123) 456-7890</p>
+        <p>
+            Follow us on:
+            <a href="https://x.com/?lang=en">Twitter</a> |
+            <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F">Facebook</a> |
+            <a href="https://www.instagram.com/accounts/login/?hl=en">Instagram</a>
+        </p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+
+</body>
+</html>
